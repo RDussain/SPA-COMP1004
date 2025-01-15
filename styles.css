@@ -1,0 +1,19 @@
+.status-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.green { 
+    background-color: #28a745; 
+}
+
+.yellow { 
+    background-color: #ffc107; 
+}
+
+.red { 
+    background-color: #dc3545; 
+}
