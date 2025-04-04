@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMT</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+    <div class="container mt-4 mb-5">
+        <header class="text-center mb-5">
+            <h1 class="display-5"><i class="fas fa-check-circle text-success me-2"></i>Too Much Time</h1>
+            <p class="lead text-muted">Stay consistent, track your progress.</p>
+        </header>
+
+        <div class="row g-4">
+            <!-- Left Column: Add Habit & Today's List -->
+            <div class="col-lg-7">
+                <!-- Add Habit Form -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3"><i class="fas fa-plus-circle me-1"></i> Add New Habit for Today</h5>
+                        <div class="mb-3">
+                            <label for="habitNameInput" class="form-label visually-hidden">Habit Name</label>
+                            <input type="text" id="habitNameInput" class="form-control" placeholder="Habit Name (e.g., Morning Meditation)">
+                        </div>
+                         <div class="mb-3">
+                             <label for="habitTimeInput" class="form-label">Target Time</label>
+                            <input type="time" id="habitTimeInput" class="form-control">
+                        </div>
+                        <button id="addHabitBtn" class="btn btn-primary w-100">
+                            <i class="fas fa-plus me-1"></i> Add Habit
+                        </button>
+                         <div id="error-message" class="text-danger small mt-2" style="display: none;">Please enter both habit name and time.</div>
+                    </div>
+                </div>
+
+                <!-- Habit List -->
+                <div class="card shadow-sm">
+                     <div class="card-body">
+                         <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="card-title mb-0"><i class="fas fa-list-check me-1"></i> Today's Habits</h5>
+                            
+                            <button id="clearTasksBtn" class="btn btn-sm btn-outline-danger" title="Remove all tasks for today">
+                                <i class="fas fa-trash-alt me-1"></i> Clear Today
+                            </button>
+                            
+                         </div>
+                        <ul id="habitList" class="list-group list-group-flush">
+                            <!-- Habit items will be injected here by JavaScript -->
+                        </ul>
+                         <p id="no-habits-message" class="text-center text-muted mt-3 mb-0" style="display: none;">No habits added for today yet. Add one above!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Progress Calendar -->
+            <div class="col-lg-5">
+                <div class="card shadow-sm">
+                     <div class="card-body">
+                         <h5 class="card-title mb-3"><i class="far fa-calendar-alt me-1"></i> Weekly Progress</h5>
+                         <p class="card-text text-muted small mb-3">Completion % for the last 7 days.</p>
+                         <div id="calendarView" class="calendar-container">
+                             <!-- Calendar days will be injected here -->
+                             <div class="text-center p-3 text-muted">Loading progress...</div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- /row -->
+
+    </div> <!-- /container -->
+
+    <!-- Bootstrap Bundle JS (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
